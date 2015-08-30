@@ -51,6 +51,17 @@ var AreaModel = function() {
       return 0;
     });
   }
+  this.removeEmptyTrash = function() {
+	var deleteTargets = new Array();
+	for (var i = 0, len = this.trash.length; i < len; i++) {
+		if (!('mostRecent' in this.trash[i])) {
+			deleteTargets.unshift(i);
+		}
+	}
+	for (var i = 0, len = deleteTargets.length; i < len; i++) {
+		this.trash.splice(deleteTargets[i], 1);
+	}
+  }
 }
 
 /**
@@ -430,6 +441,8 @@ $(function() {
     var today = new Date();
     //直近の一番近い日付を計算します。
     areaModel.calcMostRect();
+    // 日付が空のゴミを削除
+    areaModel.removeEmptyTrash();
     //トラッシュの近い順にソートします。
     areaModel.sortTrash();
     var accordion_height = $(window).height() / descriptions.length;
