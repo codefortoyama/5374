@@ -1,7 +1,7 @@
 label,sublabel,description,styles,bgcolor
 燃やすごみ,,,img/moyasu02.svg,#ea3b13
 燃やさないごみ,,,img/moyasanai02.svg,#733b96
-空き缶,,,img/shigen02.svg,#77ae1f
+空き缶,,akikan,img/shigen02.svg,#77ae1f
 空きびん,,,img/bin02.svg,#2dc7aa
 プラスチック製容器包装,,,img/bin02.svg,#ff1493
 ペットボトル,,,img/bin02.svg,#c0c0c0
